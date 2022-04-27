@@ -19,7 +19,6 @@ export default function useApplicationData(props) {
     const appointment = foundDay.appointments.map((id) =>
       state.appointments[id]
     )
-    console.log("appointment",appointment)
     for (let app of appointment) {
       if (!app.interview) {
         spots++
