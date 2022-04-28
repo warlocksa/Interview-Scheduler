@@ -1,10 +1,10 @@
 export function getAppointmentsForDay(state, day) {
   //... returns an array of appointments for that day
-  const foundDay= state.days.find(d => d.name === day);
-  if(foundDay == undefined) {
-    return []
+  const foundDay = state.days.find(d => d.name === day);
+  if (foundDay == undefined) {
+    return [];
   }
-  return foundDay.appointments.map((id)=>
+  return foundDay.appointments.map((id) =>
     state.appointments[id]
   )
 }
@@ -21,7 +21,7 @@ export function getInterview(state, interview) {
 export function getInterviewersForDay(state, day) {
   const foundDay = state.days.find(d => d.name === day);
   if (foundDay == undefined) {
-    return []
+    return [];
   }
   return foundDay.interviewers.map((id) =>
     state.interviewers[id]
