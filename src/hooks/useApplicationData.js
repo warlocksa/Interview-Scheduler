@@ -24,10 +24,8 @@ export default function useApplicationData(props) {
         spots++
       }
     }
-    console.log("spots",spots)
     // count the ones where appointment is null (falsey)
     const day = { ...foundDay, spots }
-    console.log("day", day)
     const days = state.days.map(d => d.name === state.day ? day : d);
     // return an updated days array
     return days;
@@ -43,6 +41,7 @@ export default function useApplicationData(props) {
       ...state.appointments,
       [id]: appointment
     };
+    // update the spots 
     const temp = {...state}
     temp.appointments = appointments
     const days = updateSpots(temp)  

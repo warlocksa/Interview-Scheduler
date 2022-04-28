@@ -46,7 +46,7 @@ export default function Application(props) {
             days={state.days}
             day={state.day}
             onChange={setDay}
-            
+            value={state.day}
           />
         </nav>
         <img
@@ -58,7 +58,7 @@ export default function Application(props) {
       </section>
       <section className="schedule">
         {schedule}
-        <Appointment key="last" time="5pm" />
+        <Appointment key="last" time="5pm" id="last-appointment" />
       </section>
 
     </main>

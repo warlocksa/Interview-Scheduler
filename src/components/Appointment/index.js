@@ -11,6 +11,7 @@ import Error from "./Error";
 import useVisualMode from "../../hooks/useVisualMode.js";
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "../../helpers/selectors.js"
 import "components/Appointment/styles.scss"
+import { Fragment } from "react/cjs/react.production.min";
 
 export default function Appointment(props) {
   const EMPTY = "EMPTY";
@@ -25,14 +26,7 @@ export default function Appointment(props) {
 
   // const saveSuccessful = useEffect(transition(SHOW), [save])
   const { mode, transition, back } = useVisualMode(
-    props.interview ? SHOW : EMPTY);
-
-  // const {
-  //   state,
-  //   setDay,
-  //   bookInterview,
-  //   cancelInterview
-  // } = useApplicationData();  
+    props.interview ? SHOW : EMPTY); 
 
   function save(name, interviewer) {
     const interview = {
@@ -55,7 +49,7 @@ export default function Appointment(props) {
   }
   
   return (
-    <>
+    <article className="appointment">
       <Header time={props.time} />
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === SHOW && (
@@ -91,6 +85,6 @@ export default function Appointment(props) {
       {mode === ERROR_DELETE && (
         <Error message="Could not delete the appointment." onClose={() => back()} />
       )}
-    </>
+    </article>
   )
 }

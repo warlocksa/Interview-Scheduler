@@ -23,6 +23,7 @@ export default function Form(props) {
     props.onCancel()
     setStudent("")
     setInterviewer(null)
+    setError("")
   }
   return (
     <main className="appointment__card appointment__card--create">
@@ -33,10 +34,6 @@ export default function Form(props) {
             name="name"
             type="text"
             placeholder="Enter Student Name"
-          /*
-            This must be a controlled component
-            your code goes here
-          */
             value={student}
             onChange={(event) => setStudent(event.target.value)}
             data-testid="student-name-input"

@@ -169,6 +169,9 @@ $appointment-height: 11rem;
     margin-bottom: 1rem;
   }
 }
-.appointment:last-of-type .appointment__add {
+.schedule #last-appointment  {
+  display: none;
+}
+.appointment:last-of-type .appointment__add .appointment__add-button{
   display: none;
 }
