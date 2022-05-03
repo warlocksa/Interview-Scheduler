@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import Header from "./Header";
 import Show from "./Show";
@@ -7,11 +7,8 @@ import Form from "./Form";
 import Status from "./Status";
 import Confirm from "./Confirm";
 import Error from "./Error";
-
 import useVisualMode from "../../hooks/useVisualMode.js";
-import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "../../helpers/selectors.js"
 import "components/Appointment/styles.scss"
-import { Fragment } from "react/cjs/react.production.min";
 
 export default function Appointment(props) {
   const EMPTY = "EMPTY";

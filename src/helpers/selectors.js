@@ -1,7 +1,7 @@
 export function getAppointmentsForDay(state, day) {
   //... returns an array of appointments for that day
   const foundDay = state.days.find(d => d.name === day);
-  if (foundDay == undefined) {
+  if (foundDay === undefined) {
     return [];
   }
   return foundDay.appointments.map((id) =>
@@ -20,7 +20,7 @@ export function getInterview(state, interview) {
 
 export function getInterviewersForDay(state, day) {
   const foundDay = state.days.find(d => d.name === day);
-  if (foundDay == undefined) {
+  if (foundDay === undefined) {
     return [];
   }
   return foundDay.interviewers.map((id) =>
