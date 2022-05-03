@@ -9,6 +9,7 @@ export default function useVisualMode(initial) {
       setMode(mode)
       setHistory([...history, mode])
     }
+    // if the history need to replace, delete the last history
     else {
       history.pop()
       setMode(mode)
@@ -23,6 +24,7 @@ export default function useVisualMode(initial) {
       setMode(newMode)
       setHistory(historyCopy)
     }
+    // if history is empty, refresh the page
     else {
       setMode(historyCopy[0])
     }

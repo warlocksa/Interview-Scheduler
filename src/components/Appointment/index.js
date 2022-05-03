@@ -21,10 +21,9 @@ export default function Appointment(props) {
   const ERROR_SAVE = "ERROR_SAVE";
   const ERROR_DELETE = "ERROR_DELETE";
 
-  // const saveSuccessful = useEffect(transition(SHOW), [save])
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY);
-
+// show the interview when save successful, else go to the error page 
   function save(name, interviewer) {
     const interview = {
       student: name,
@@ -37,7 +36,7 @@ export default function Appointment(props) {
       .catch(error => {transition(ERROR_SAVE)
       });
   }
-
+  // show the empty when delete successful, else go to the error page 
   function destroy(event) {
     transition(DELETE);
     props
