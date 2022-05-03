@@ -5,6 +5,7 @@ import Button from "components/Button";
 
 export default function Form(props) {
   const [error, setError] = useState("");
+  // check the student and interviewer section is not empty when edit or create.
   function validate() {
     if (student === "") {
       setError("Student name cannot be blank");
@@ -19,6 +20,7 @@ export default function Form(props) {
   }
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
+  // clear every information when cancel
   const reset = () => {
     props.onCancel()
     setStudent("")

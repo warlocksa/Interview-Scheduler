@@ -21,6 +21,20 @@ npm test
 ```sh
 npm run storybook
 ```
+
+## Dependencies
+
+"axios": "^0.26.1",
+"classnames": "^2.2.6",
+"normalize.css": "^8.0.1",
+"react": "^16.9.0",
+"react-dom": "^16.9.0",
+"react-scripts": "3.0.0"
+
+## Scheduler-api address
+
+https://github.com/warlocksa/scheduler-api
+
 ## Interview-Scheduler
 
 The project in week 7 to week 8. People can use it to create, edit, and delete appointments with the interviewers who available. And people can also check the available or not from Monday to Friday. The following are the some screenshot of this project.

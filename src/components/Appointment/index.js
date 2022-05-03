@@ -19,7 +19,7 @@ export default function Appointment(props) {
   const CONFIRM = "CONFIRM";
   const EDIT = "EDIT";
   const ERROR_SAVE = "ERROR_SAVE";
-  const ERROR_DELETE = "ERROR_DELETE"
+  const ERROR_DELETE = "ERROR_DELETE";
 
   // const saveSuccessful = useEffect(transition(SHOW), [save])
   const { mode, transition, back } = useVisualMode(
@@ -34,7 +34,8 @@ export default function Appointment(props) {
     props
       .bookInterview(props.id, interview)
       .then(() => transition(SHOW))
-      .catch(error => transition(ERROR_SAVE, true));
+      .catch(error => {transition(ERROR_SAVE)
+      });
   }
 
   function destroy(event) {
