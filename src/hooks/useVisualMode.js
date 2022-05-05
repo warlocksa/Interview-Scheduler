@@ -5,28 +5,28 @@ export default function useVisualMode(initial) {
   const [history, setHistory] = useState([initial]);
 
   function transition(mode, replace = false) {
-    if (!replace) {
+    if (replace) {
       setMode(mode)
-      setHistory([...history, mode])
+      setHistory(prev => ([...prev.slice(0, -1), mode]))
     }
     // if the history need to replace, delete the last history
     else {
-      history.pop()
       setMode(mode)
-      setHistory([...history, mode])
+      setHistory(prev => ([...prev, mode]))
     }
   }
 
   function back() {
-    const historyCopy = [...history]
-    if (historyCopy.length > 1) {
-      const newMode = historyCopy.pop()
+    console.log(history)
+    if (history.length > 1) {
+      const newHistory = history.slice(0,-1)
+      const newMode = newHistory[newHistory.length - 1]
       setMode(newMode)
-      setHistory(historyCopy)
+      setHistory(newHistory)
     }
     // if history is empty, refresh the page
     else {
-      setMode(historyCopy[0])
+      setMode(history[0])
     }
   }
   return { mode, transition, back };

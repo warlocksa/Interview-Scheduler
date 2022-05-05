@@ -33,12 +33,12 @@ export default function Appointment(props) {
     props
       .bookInterview(props.id, interview)
       .then(() => transition(SHOW))
-      .catch(error => {transition(ERROR_SAVE)
+      .catch(error => {transition(ERROR_SAVE, true)
       });
   }
   // show the empty when delete successful, else go to the error page 
   function destroy(event) {
-    transition(DELETE);
+    transition(DELETE, true);
     props
       .cancelInterview(props.id)
       .then(() => transition(EMPTY))
