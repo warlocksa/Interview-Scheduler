@@ -17,7 +17,6 @@ export default function useVisualMode(initial) {
   }
 
   function back() {
-    console.log(history)
     if (history.length > 1) {
       const newHistory = history.slice(0,-1)
       const newMode = newHistory[newHistory.length - 1]
